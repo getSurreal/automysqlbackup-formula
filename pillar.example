@@ -1,0 +1,11 @@
+automysqlbackup:
+  config:
+    backup_dir: /var/backups
+
+  cron:
+    enabled: True    # Default False
+    minute: 15       # Default *
+    hour: 1,7,13,19  # Default *
+    daymonth: 10-20  # Default *
+    month: '*'       # Default *
+    dayweek: 2-5     # Default *
