@@ -11,6 +11,12 @@
     - mode: 664
     - source: salt://automysqlbackup/files/automysqlbackup.conf
 
+{% if salt['pillar.get']('automysqlbackup:config:backup_dir') is defined %}
+{{ salt['pillar.get']('automysqlbackup:config:backup_dir') }}:
+  file.directory:
+    - make_dirs: True
+{% endif %}
+
 {% set cron = salt['pillar.get']('automysqlbackup:cron', '') %}
 automysql_cron:
 {% if salt['pillar.get']('automysqlbackup:cron:enabled', False)  %}
