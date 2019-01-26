@@ -14,7 +14,7 @@
 {% if salt['pillar.get']('automysqlbackup:config:backup_dir') is defined %}
 {{ salt['pillar.get']('automysqlbackup:config:backup_dir') }}:
   file.directory:
-    - make_dirs: True
+    - makedirs: True
 {% endif %}
 
 {% set cron = salt['pillar.get']('automysqlbackup:cron', '') %}
