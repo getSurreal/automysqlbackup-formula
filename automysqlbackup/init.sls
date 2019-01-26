@@ -7,7 +7,7 @@
   file.managed:
     - makedirs: True
     - template: jinja
-    - context: {{ salt['pillar.get']('automysqlbackup:config' }}
+    - context: {{ salt['pillar.get']('automysqlbackup:config') }}
     - mode: 664
     - source: salt://automysqlbackup/files/automysqlbackup.conf
 
