@@ -1,6 +1,7 @@
 automysqlbackup:
   config:
-    backup_dir: /var/backups
+    backup_dir: /var/backups/db
+    mysql_dump_latest: 'yes'  # Have to quote it or salt changes it to True
 
   cron:
     enabled: True    # Default False
